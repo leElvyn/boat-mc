@@ -20,6 +20,6 @@ The biggest challenge would be to always keep the map in sync, while avoiding du
 The architecture is composed of : 
 
 - A central server (the "relay"). This is the server where every players is connecting to. It doesn't implement any features from the NMS package. This server should be written in a language like Rust, and his only purpose would be to forward the traffic from the server currently handling the client, as well as orchestrate every other servers. That allows for smooth transitions whenever we need to change the physical server the player is managed by.
-- A lot of smaller servers, running a "normal" minecraft server, but only computing a certain number of chunks. They are orchestrated by the relay, and whenever a player approaches the border of a section, the relay will now forward to the player the traffic from the new server.
+- A lot of smaller servers ("shards"), running a "normal" minecraft server, but only computing a certain number of chunks. They are orchestrated by the relay, and whenever a player approaches the border of a section, the relay will now forward to the player the traffic from the new server.
 
 ![illustration flowchart](https://github.com/leElvyn/boat-mc/blob/main/images/chart-v1.png)
